@@ -16,17 +16,17 @@
 {\footnotesize \textsuperscript{*}Note: This paper is the result of a research practice course handout, the results are made up}
 }
 
-\author{\IEEEauthorblockN{4\textsuperscript{th} Bustya Balázs}
+\author{\IEEEauthorblockN{1\textsuperscript{th} Bustya Balázs}
 \IEEEauthorblockA{\textit{Eötvös Loránd University} \\
 \textit{Faculty of Informatics}\\
 Budapest, Hungary}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Csizmadia Árpád}
+\IEEEauthorblockN{2\textsuperscript{th} Csizmadia Árpád}
 \IEEEauthorblockA{\textit{Eötvös Loránd University} \\
 \textit{Faculty of Informatics}\\
 Budapest, Hungary}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Nagy Norbert Botond}
+\IEEEauthorblockN{3\textsuperscript{th} Nagy Norbert Botond}
 \IEEEauthorblockA{\textit{Eötvös Loránd University} \\
 \textit{Faculty of Informatics}\\
 Budapest, Hungary}
@@ -40,20 +40,7 @@ Budapest, Hungary}
 \maketitle
 
 \begin{abstract}
-    White blood cells, WBCs for short, are an essential component of the human immune system. These cells are our body’s
-    first line of defense against infections and diseases caused by bacteria, viruses, and fungi, as well as abnormal and external
-    substances that may enter the bloodstream. A wrong WBC count can signify dangerous viral infections, autoimmune disorders,
-    cancer, sarcoidosis, aplastic anemia, leukemia, tuberculosis, etc. A lot of these diseases and disorders can be extremely painful
-    and often result in death. Leukemia is among the more common types of blood cancer and when left undetected leads to
-    death. An early diagnosis is necessary which is possible by looking at the shapes and determining the numbers of young
-    and immature WBCs to see if they are normal or not. Performing this task manually is a cumbersome, expensive, and timeconsuming process for hematologists, and therefore computer-aided systems have been developed to help with this problem.
-    This paper proposes an improved method of classification of WBCs utilizing a combination of preprocessing, convolutional
-    neural networks (CNNs), feature selection algorithms, and classifiers. In preprocessing, contrast-limited adaptive histogram
-    equalization (CLAHE) is applied to the input images. A CNN is designed and trained to be used for feature extraction
-    along with ResNet50 and EfficientNetB0 networks. Ant colony optimization is used to select the best features which are
-    then serially fused and passed onto classifiers such as support vector machine (SVM) and quadratic discriminant analysis
-    (QDA) for classification. The classification accuracy achieved on the Blood Cell Images dataset is 98.44\%, which shows the
-    robustness of the proposed work.
+The most efficient healthcare method is prevention. Blood samples are a great but costly way to eliminate serious issues early. One of the blood analyzes includes analysis of the white blood cells (WBCs later). Image prediction has developed significantly with Deep Learning. There are studies processing WBCs pretty efficiently. They include some machine learning models which could further optimized and we would like to improve them with the newest version and combinations of the models. We also would like to include lower quality images and predict on those as effiicently as on the base set. This could lead to more frequent and cheaper analysis.
 \end{abstract}
 
 \begin{IEEEkeywords}
