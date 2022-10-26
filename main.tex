@@ -11,43 +11,32 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Conference Paper Title*\\
+\title{Categorizing white blood cells by utilizing deep features of proposed
+4B-AdditionNet-based CNN network with ant colony optimization\\
 {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
 should not be used}
 \thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
+\author{\IEEEauthorblockN{4\textsuperscript{th} Bustya Balázs}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
 email address or ORCID}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+\IEEEauthorblockN{4\textsuperscript{th} Csizmadia Árpád}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
 email address or ORCID}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+\IEEEauthorblockN{4\textsuperscript{th} Nagy Norbert Botond}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
 email address or ORCID}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+\IEEEauthorblockN{4\textsuperscript{th} Novák-Schwartz József}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
@@ -57,28 +46,36 @@ email address or ORCID}
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+    White blood cells, WBCs for short, are an essential component of the human immune system. These cells are our body’s
+    first line of defense against infections and diseases caused by bacteria, viruses, and fungi, as well as abnormal and external
+    substances that may enter the bloodstream. A wrong WBC count can signify dangerous viral infections, autoimmune disorders,
+    cancer, sarcoidosis, aplastic anemia, leukemia, tuberculosis, etc. A lot of these diseases and disorders can be extremely painful
+    and often result in death. Leukemia is among the more common types of blood cancer and when left undetected leads to
+    death. An early diagnosis is necessary which is possible by looking at the shapes and determining the numbers of young
+    and immature WBCs to see if they are normal or not. Performing this task manually is a cumbersome, expensive, and timeconsuming process for hematologists, and therefore computer-aided systems have been developed to help with this problem.
+    This paper proposes an improved method of classification of WBCs utilizing a combination of preprocessing, convolutional
+    neural networks (CNNs), feature selection algorithms, and classifiers. In preprocessing, contrast-limited adaptive histogram
+    equalization (CLAHE) is applied to the input images. A CNN is designed and trained to be used for feature extraction
+    along with ResNet50 and EfficientNetB0 networks. Ant colony optimization is used to select the best features which are
+    then serially fused and passed onto classifiers such as support vector machine (SVM) and quadratic discriminant analysis
+    (QDA) for classification. The classification accuracy achieved on the Blood Cell Images dataset is 98.44\%, which shows the
+    robustness of the proposed work.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+White blood cells · CNN · Classification · Preprocessing · Fusion · Selection
 \end{IEEEkeywords}
 
-\include{introducion.tex}
+\input{introduction.tex}
 
-\section{Ease of Use}
+\section{Literature review}
+\section{Materials and methods}
+\section{Dataset}
+\section{Results and discussion}
+\section{Conclusion}
+\section{Future work}
+\section{Declarations}
 
-\subsection{Maintaining the Integrity of the Specifications}
-
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
