@@ -1,0 +1,57 @@
+\section{Materials and methods}
+
+This part presents the proposed tuning and modification on the 4B-AdditionNet
+%https://link.springer.com/article/10.1007/s40747-021-00564-x#Sec3
+CNN architecture alongside the description of the main steps of the whole process to classify WBCs. The classification process includes the preprocessing of the blood smear images using CLAHE, the feature extraction using the combination of three networks, namely EfficientNetB0, 4B-AdditionNet and ResNet50V2, the feature selection using ant colony optimization and the classification using multiple classifiers. The steps of the whole process are discussed in the upcoming sections.
+
+\subsection{Image preprocessing}
+
+To enhance the images CLAHE
+%https://doi.org/10.21236/ADA014928
+is used on the dataset in order to improve the contrast of the smear images and make the cells more prominent. Since CLAHE works with one channel images, the images are splitted into three channels, one for each color channel, and then CLAHE was applied for the separate R, G, B channels. The enhanced images then were merged back together into one final image, which has a much higher contrast compared to the original one.
+
+\subsection{Feature extraction}
+%hozzaadott szam - telefonos képek?
+In this research, features are extracted from the three different CNNs. These features are extracted from the Blood Cell Images dataset (combined with the images from the mobilephone microscope images.). There are 9957 images from the Blood Cell Images dataset and xxx images from the mobile microscope images. The first network, 4B-AdditionNet extracts 4096 features from its FC-2 layer, while EfficientNetB0 extracts 1000 features from dense|MatMul layer and ResNet50V2 obtains another 1000 features from it's FC1000 layer.
+
+
+\subsection{Feature selection}
+
+Since there is a large number of different features extracted from CNNs feature selection is used to reduce the dimensionality. A subset of features is selected with a feature optimization algorithm, namely Ant Colony Optimization (ACO). This method is a probabilistic method for choosing optimal paths. It was inspired by the seeking comportment of ants when trying to find a feasible path between the group and the food source. In the beginning, this method was mainly used to try to solve the well-known challenge, the travelling salesman problem. Later it was used for many optimization problems as well.
+
+% table with param values?
+ACO has the following parameters:
+\begin{itemize}
+
+    \item{the number of ants is m}
+    \item{the number of iterations is $t_{max}$}
+    \item{the evaporation coefficient is $\rho$ with a value of 0 $\le \rho \le 1$}
+    \item{the desirability of graph edges is $\eta$}
+    \item{$\alpha \ge 0$, that controls the relative weight of the pheromone}
+    \item{$\beta \ge 0$, that controls the weight of $\eta$}
+    \item{the amount of initial pheromone concentration is $Q$}
+
+\end{itemize}
+
+In each iteration \emph{t}, every ant \emph{k} begins by randomly selecting a feature. In order to create a subset from the starting feature the ant follows a path. In each step the ant follows the probabilistic transition rule to select the next feature in the path, given by 
+
+$P_{ij}^k\left(t\right)=\left\{\begin{array}{l}\frac{\tau_{ij}^\alpha\left(t\right).\eta_{ij}^\beta\left(t\right)}{\sum_{l\in S_i^k}\tau_{il}^\alpha.\eta_{il}^\beta\left(t\right)},\forall j\in S_i^k\\0,\,\,{\text{otherwise}}\end{array}\right.$,
+where $S_{i}^{k}$ denotes the subset of features that have not been chosen yet, $\tau_{ij}(t)$ represents the pheromone trail between the features i and j, $\eta_{ij}(t)$ represents the heuristic desirability to select feature j when ant k is currently in the feature i.
+
+For each feature subset accuracy is calculated using the formula below:
+$\mathrm{Accuracy}=\frac{1}{K} \sum\limits_{i=1}^{K}\frac{1}{2}\left({\mathrm{Accuracy}}_{i}^{\mathrm{Train}}+{\mathrm{Accuracy}}_{i}^{\mathrm{Test}}\right)$,
+where K denotes the folds set for the K-fold cross-validation procedure to calculate the subset accuracy.
+After calculating the accuracies of the feature subsets, the one with the highest accuracy is chosen and the pheromone trail in the feature space is updated based on this trail.
+The same process is repeated for all ants and then finally the subset with the best accuracy is found.
+
+\subsection{Feature fusion}
+
+In the classification process only a single feature vector can be used for classification. To create a single feature vector multiple feature vectors are concatenated horizontally. The purpose of using a single feature vector is to possibly help with the reduction of the error rate. To conduct all five experiments on the designed network, feature fusion is used to create multiple feature vectors with different combinations of features. The features from the three CNNs have been fused serially: the first features are from 4B-AdditionNet, the middle ones are extracted from EfficientNetB0 and the last ones are extracted from ResNet50V2.
+
+\subsection{Classification}
+
+The last step is classification. This is the process of predicting a class label for a given image. Different classifiers such as SVM,
+%https://link.springer.com/article/10.1007/BF00994018
+LDA,
+%https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x
+and KNN has been used to classify WBC into four categories. The classifiers use fivefold cross-validaiton. The SVMs, namely Linear, Cubic and Quadratic SVM classifiers utilize a Box Constraint of 1 and a Coding Design of OneVsOne. The predictions are measured with multiple performance estimation methods. CSVM is noted to have the highest accuracy while LDA is the fastest one with acceptable accuracy.
