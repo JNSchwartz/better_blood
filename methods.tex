@@ -35,11 +35,11 @@ ACO has the following parameters:
 
 In each iteration \emph{t}, every ant \emph{k} begins by randomly selecting a feature. In order to create a subset from the starting feature the ant follows a path. In each step the ant follows the probabilistic transition rule to select the next feature in the path, given by 
 
-P_{ij}^k\left(t\right)=\left\{\begin{array}{l}\frac{\tau_{ij}^\alpha\left(t\right).\eta_{ij}^\beta\left(t\right)}{\sum_{l\in S_i^k}\tau_{il}^\alpha.\eta_{il}^\beta\left(t\right)},\forall j\in S_i^k\\0,\,\,{\text{otherwise}}\end{array}\right.,
-where S_{i}^{k} denotes the subset of features that have not been chosen yet, \tau_{ij}(t) represents the pheromone trail between the features i and j, \eta_{ij}(t) represents the heuristic desirability to select feature j when ant k is currently in the feature i.
+$P_{ij}^k\left(t\right)=\left\{\begin{array}{l}\frac{\tau_{ij}^\alpha\left(t\right).\eta_{ij}^\beta\left(t\right)}{\sum_{l\in S_i^k}\tau_{il}^\alpha.\eta_{il}^\beta\left(t\right)},\forall j\in S_i^k\\0,\,\,{\text{otherwise}}\end{array}\right.$,
+where $S_{i}^{k}$ denotes the subset of features that have not been chosen yet, $\tau_{ij}(t)$ represents the pheromone trail between the features i and j, $\eta_{ij}(t)$ represents the heuristic desirability to select feature j when ant k is currently in the feature i.
 
 For each feature subset accuracy is calculated using the formula below:
-\mathrm{Accuracy}=\frac{1}{K} \sum\limits_{i=1}^{K}\frac{1}{2}\left({\mathrm{Accuracy}}_{i}^{\mathrm{Train}}+{\mathrm{Accuracy}}_{i}^{\mathrm{Test}}\right),
+$\mathrm{Accuracy}=\frac{1}{K} \sum\limits_{i=1}^{K}\frac{1}{2}\left({\mathrm{Accuracy}}_{i}^{\mathrm{Train}}+{\mathrm{Accuracy}}_{i}^{\mathrm{Test}}\right)$,
 where K denotes the folds set for the K-fold cross-validation procedure to calculate the subset accuracy.
 After calculating the accuracies of the feature subsets, the one with the highest accuracy is chosen and the pheromone trail in the feature space is updated based on this trail.
 The same process is repeated for all ants and then finally the subset with the best accuracy is found.
