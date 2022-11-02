@@ -25,7 +25,7 @@ ACO has the following parameters:
 
     \item{the number of ants is m}
     \item{the number of iterations is $t_{max}$}
-    \item{the evaporation coefficient is $\rho$ with a value of 0 $\le \rho \le 1$}
+    \item{the evaporation coefficient is $\rho$ with a value of 0 $\le \rho \le 1$}
     \item{the desirability of graph edges is $\eta$}
     \item{$\alpha \ge 0$, that controls the relative weight of the pheromone}
     \item{$\beta} \ge 0$, that controls the weight of $\eta$
@@ -45,6 +45,8 @@ After calculating the accuracies of the feature subsets, the one with the highes
 The same process is repeated for all ants and then finally the subset with the best accuracy is found.
 
 \subsection{Feature fusion}
+
+In the classification process only a single feature vector can be used for classification. To create a single feature vector multiple feature vectors are concatenated horizontally. The purpose of using a single feature vector is to possibly help with the reduction of the error rate. To conduct all five experiments on the designed network, feature fusion is used to create multiple feature vectors with different combinations of features. The features from the three CNNs have been fused serially: the first features are from 4B-AdditionNet, the middle ones are extracted from EfficientNetB0 and the last ones are extracted from ResNet50V2.
 
 \subsection{Classification}
 
