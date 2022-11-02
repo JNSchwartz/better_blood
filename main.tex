@@ -40,7 +40,7 @@ Budapest, Hungary}
 \maketitle
 
 \begin{abstract}
-The most efficient healthcare method is prevention. Blood samples are a great but costly way to eliminate serious issues early. One of the blood analyzes includes analysis of the white blood cells (WBCs later). Image prediction has developed significantly with Deep Learning. There are studies processing WBCs pretty efficiently. They include some machine learning models which could further optimized and we would like to improve them with the newest version and combinations of the models. We also would like to include lower quality images and predict on those as effiicently as on the base set. This could lead to more frequent and cheaper analysis.
+The most efficient healthcare method is prevention. Blood samples are a great but costly way to eliminate serious issues early. One of the blood analyzes includes analysis of the white blood cells (WBCs later). Image prediction has developed significantly with Deep Learning. There are studies processing WBCs pretty efficiently. They include some machine learning models which could further optimized and we would like to improve them with the newest version and combinations of the models. We also would like to include lower quality images and predict on those as efficiently as on the base set. This could lead to more frequent and cheaper analysis.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -49,10 +49,22 @@ White blood cells · CNN · Classification · Preprocessing · Fusion · Selecti
 
 \input{introduction.tex}
 
-\input{Literature_review.tex}
+\section{Literature Review}
 \input{methods.tex}
+\section{Execution environment}
+The training process were conducted on a Windows 11 desktop PC with a AMD Ryzen 9 7950X with 16 cores and 32 threads. The CPU was overclocked to a base clock of 4.7 Ghz and we achieved a respectable 5.9 Ghz single core boost performance. The PC had 16GBs of DDR4-4400 RAM, and a CUDA enabled Nvidia GeForce GTX rtx 3090 GPU with 24 GBs of Video RAM (VRAM). Our system consumed 900W of power. The network design, testing, training, and the final experimentation process were performed using the MATLAB R2020b software package.
 \input{dataset.tex}
-\section{Results and discussion}
+\input{Results_and_discussion.tex}
+
+The main objective of this study is to classify WBCs with improved performance while keeping the best possible accuracy while utilizing ResNet50V2 instead of ResNet50 in the classification pipeline discussed earlier (Sec. \ref{methods}) and reducing the number of features needed.
+
+
+
+After preprocessing using CLAHE, the proposed network is used along with two other networks to obtain features. Once feature selection is employed to create a feature vector, SVM, LDA, and other predictors are used to evaluate the execution. This portion contains the outcome and assessment of the intended method. First, the details of the execution environment are stated, followed by a brief description of the dataset and the performance evaluation techniques. Finally, the experiments performed are explained in detail.
+
+The main contribution of this research is the modification and fine-tuning of an ML-based model involving multiple CNN. The architecture uses a channel-wise CLAHE application to improve the contrast in the blood cell images. For feature extraction, it utilizes multiple CNNs, two already pre-existing Networks, namely ResNet50 and EfficientNetB0, and a network similar to AlexNet, named 4B-AdditionNet. For feature selections, it uses Ant Colony Optimization(ACO) and for classification, it uses multiple methods, like linear SVM (LSVM), Cubic SVM (CSVM), quadratic support vector machine (QSVM), linear discriminant analysis (LDA), fine K-nearest neighbour (FKNN), and coarse K-nearest neighbour (CKNN).
+The primary objective of this research is to propose a modification for the described architecture to accelerate and decrease computational needs. To achieve these it proposes the decrement of the number of features and the replacement of ResNet50. In cases where the available data is imbalanced ResNet50V2 performs better. %https://www.sciencedirect.com/science/article/pii/S2352914820302537#bib33
+
 \section{Conclusion}
 \section{Future work}
 
