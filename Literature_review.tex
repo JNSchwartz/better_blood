@@ -1,18 +1,19 @@
 \section{Literature review}
-The number of researches of traditional machine learning (TML) and deep learning (DL) for leucocytes classification shows exponential growth in recent times.
-%KHAN, Siraj, et al. A review on traditional machine learning and deep learning models for WBCs classification in blood smear images. IEEE Access, 2020, 9: 10657-10673.
-DL approaches has the advantage over TML to offer highly automated systems, because in case of DP, feature extraction is learned from data and not designed by humans, as in case of TML.
-For this reason DL solutions using CNN got great attention from researchers, especially since modern CNN architectures appeared.
-
+Until nowadays, a lot of researches has been conducted on WBC image classification, which indicates the importance of the topic.
 The 
 %KHAN, Siraj, et al. A review on traditional machine learning and deep learning models for WBCs classification in blood smear images. IEEE Access, 2020, 9: 10657-10673.
-survey collects 
+survey gives a very good introduction and overview of the more significant researches. It presents a wide spectrum of different technics and methodologies used by researchers to create semi or fully automatic systems for WBC counting and classification. The survey lists state of the art implementations categorized by the used methodologies based on the reached accuracy.
+
+
+In %BANIK, Partha Pratim; SAHA, Rappy; KIM, Ki-Doo. An automatic nucleus segmentation and CNN model based classification method of white blood cell. Expert Systems with Applications, 2020, 149: 113211.
+research, the authors propose a color space conversion and k-means algorithm based new WBC nucleus segmentation method. Then they localize the WBC based on the location of segmented nucleus to separate them from the entire blood smear image. To classify the localized WBC image, we propose a new convolutional neural network (CNN) model by combining the concept of fusing the features of first and last convolutional layers, and propagating the input image to the convolutional layer. We also use a dropout layer for preventing the model from overfitting problem. We show the effectiveness of our proposed nucleus segmentation method by evaluating with seven quality metrics and comparing with other methods on four public databases. We achieve average accuracy of 98.61% and more than 97% on each public database. 
+
 The WBS detection process with CNN is structured from 4 main steps: preprocessing, feature extraction, feature selection and classification.
-Our research is based on 
+
+The proposed CNN architecture in this research is very similar to
 %SHAHZAD, Asim, et al. Categorizing white blood cells by utilizing deep features of proposed 4B-AdditionNet-based CNN network with ant colony optimization. Complex & Intelligent Systems, 2022, 8.4: 3143-3159.
+papers CNN arhitecture, with modifications in the feature extraction process. Using ResNet50V2 instead of ResNet50 ... based on
+%RAHIMZADEH, Mohammad; ATTAR, Abolfazl. A modified deep convolutional neural network for detecting COVID-19 and pneumonia from chest X-ray images based on the concatenation of Xception and ResNet50V2. Informatics in medicine unlocked, 2020, 19: 100360.
 
 
-\subsection{}
 
-\color{green} \end
-\color{red} \end
