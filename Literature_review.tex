@@ -4,60 +4,28 @@ The \cite{b7} survey gives a very good introduction and overview of the more sig
 
 The WBS detection process with CNN is structured from 4 main steps: preprocessing, feature extraction, feature selection and classification.
 
-Preprocessing have the role to remove irrelevant information from the image and enhance the contrast 
-%TAVAKOLI, Nasrin, et al. Detection of abnormalities in mammograms using deep features. Journal of Ambient Intelligence and Humanized Computing, 2019, 1-13. 
-%PRINYAKUPT, Jaroonrut; PLUEMPITIWIRIYAWEJ, Charnchai. Segmentation of white blood cells and comparison of cell morphology by linear and naïve Bayes classifiers. Biomedical engineering online, 2015, 14.1: 1-19. 
-%JIANG, Kan; LIAO, Qing-Min; XIONG, Yuan. A novel white blood cell segmentation scheme based on feature space clustering. Soft Computing, 2006, 10.1: 12-19.
-%ZHONG, Zhen, et al. White blood cell segmentation via sparsity and geometry constraints. IEEE Access, 2019, 7: 167593-167604.
-. Good preprocessing can significantly improve the accuracy of the classification 
-%  PAL, Kuntal Kumar; SUDEEP, K. S. Preprocessing for image classification by convolutional neural networks. In: 2016 IEEE International Conference on Recent Trends in Electronics, Information & Communication Technology (RTEICT). IEEE, 2016. p. 1778-1781.
-.
+Preprocessing have the role to remove irrelevant information from the image and enhance the contrast \cite{b8}, \cite{b9}, \cite{b10}, \cite{b11}. Good preprocessing can significantly improve the accuracy of the classification \cite{b12}.
 
-CNN can be used for classification, but also for feature extraction (FE). FE is the process of extracting relevant information from raw data. However, the problem of extracting appropriate features that can reflect the intrinsic content of a piece of data or dataset as complete as possible is still a challenge for most FE techniques
-%SALAU, Ayodeji Olalekan; JAIN, Shruti. Feature extraction: a survey of the types, techniques, applications. In: 2019 International Conference on Signal Processing and Communication (ICSC). IEEE, 2019. p. 158-164.
-. Shape color and texture features can be obtained with traditional image processing approach, but they are also present in sublayers of pretained CNNs like AlexNet.
-In 
-%HEGDE, Roopa B., et al. Feature extraction using traditional image processing and convolutional neural network methods to classify white blood cells: a study. Australasian physical & engineering sciences in medicine, 2019, 42.2: 627-638. 
-study a traditional image processing approach and CNN (FE) with AlexNet is compared. Both the approaches have comparable accuracy but misclassification is more in case of the traditional approach compared to that of CNN approach. However
- CNN approach require more computational resources.
+CNN can be used for classification, but also for feature extraction (FE). FE is the process of extracting relevant information from raw data. However, 
+the problem of extracting appropriate features that can reflect the intrinsic content of a piece of data or dataset as complete as possible is still a challenge for most FE techniques \cite{b13}. 
+Shape color and texture features can be obtained with traditional image processing approach, but they are also present in sublayers of pretained CNNs like AlexNet.
+In \cite{b14} study a traditional image processing approach and CNN (FE) with AlexNet is compared. Both approaches have comparable accuracy but misclassification is 
+more in case of the traditional approach compared to the CNN approach. However CNN approach require more computational resources.
 
-Feature selection (FS) is the process of removing the redundant or not important features from the output feature set of the FE. FS is very important to achieve high accuracy and deacreased runtime. The selection of redundant or innapropiate features results in low accuracy. Using lots of feature increases the runtime significantly
-%SHARIF, Muhammad, et al. A framework for offline signature verification system: Best features selection approach. Pattern Recognition Letters, 2020, 139: 50-59.
-%SABA, Tanzila, et al. Categorizing the students’ activities for automated exam proctoring using proposed deep L2-GraftNet CNN network and ASO based feature selection approach. IEEE Access, 2021, 9: 47639-47656.
-.
+Feature selection (FS) is the process of removing the redundant or not important features from the output feature set of the FE. FS is very important to achieve high accuracy and deacreased runtime. 
+The selection of redundant or innapropiate features results in low accuracy. Using lots of feature increases the runtime significantly \cite{b15}, \cite{b16}.
 
-Classification is the final and most important stage. At this level every image gets the label of that class, which has the highest probability to correspond to the image
-%SHAH, Jamal Hussain, et al. Facial expressions classification and false label reduction using LDA and threefold SVM. Pattern Recognition Letters, 2020, 139: 166-173.
-. The probability is usually calculated by using the softmax activation function. This function returns a number between 0 and 1
-%BRIDLE, John S. Probabilistic interpretation of feedforward classification network outputs, with relationships to statistical pattern recognition. In: Neurocomputing. Springer, Berlin, Heidelberg, 1990. p. 227-236.
-. 
+Classification is the final and most important stage. At this level every image gets the label of that class, which has the highest probability to correspond to the image \cite{b17}. 
+The probability is usually calculated by using the softmax activation function. This function returns a number between 0 and 1 \cite{b18}. 
 
 This paragraph contains a brief overview and comparison of state of the art systems.  
-%BANIK, Partha Pratim; SAHA, Rappy; KIM, Ki-Doo. An automatic nucleus segmentation and CNN model based classification method of white blood cell. Expert Systems with Applications, 2020, 149: 113211. 
-they developed a color space conversion and k-means algorithm based new WBC nucleus segmentation method. The achieved accuracy is 99.42\% on BCCD dataset.
-Paper 
-%ALMEZHGHWI, Khaled; SERTE, Sertan. Improved classification of white blood cells with the generative adversarial network and deep convolutional neural network. Computational Intelligence and Neuroscience, 2020, 2020.
-investigates image transformation operations and generative adversarial networks for data augmentation and state-of-the-art deep neural networks for classification. The achieved accuracy is 98.8\% using DenseNet-169 on CIFAR-100 dataset.
-In
-%TAVAKOLI, Sajad, et al. New segmentation and feature extraction algorithm for classification of white blood cells in peripheral smear images. Scientific Reports, 2021, 11.1: 1-13.
-research a three step method is proposed: detecting the nucleus and cytoplasm with a new algorithm, extracting features, and classification using SVM model. The achieved accuracy is 94.20\% on BCCD dataset.
-In
-%SHAHZAD, Asim, et al. Categorizing white blood cells by utilizing deep features of proposed 4B-AdditionNet-based CNN network with ant colony optimization. Complex & Intelligent Systems, 2022, 8.4: 3143-3159. 
- research the system contains contrast-limited adaptive histogram equalization as preprocessor; ResNet50, EfficientNetB0 and 4B-AdditionNet a for feature extraction; ant colony optimization for feature selection and support vector machine as well as quadratic discriminant analysis for classification. The achieved accuracy is 98.44\% on Blood Cell Images dataset.
+In \cite{b19} a color space conversion and k-means algorithm based new WBC nucleus segmentation method has been developed. The achieved accuracy is 99.42\% on BCCD dataset.
+Paper \cite{b20} investigates image transformation operations and generative adversarial networks for data augmentation and state-of-the-art deep neural networks for classification. The achieved accuracy is 98.8\% using DenseNet-169 on CIFAR-100 dataset.
+In \cite{b21} research a three step method is proposed: detecting the nucleus and cytoplasm with a new algorithm, extracting features, and classification using SVM model. The achieved accuracy is 94.20\% on BCCD dataset.
+In \cite{b5} research the system contains contrast-limited adaptive histogram equalization as preprocessor; ResNet50, EfficientNetB0 and 4B-AdditionNet a for feature extraction; 
+ant colony optimization for feature selection and support vector machine as well as quadratic discriminant analysis for classification. The achieved accuracy is 98.44\% on Blood Cell Images dataset.
 
-The proposed CNN architecture in this research is very similar to the
-%SHAHZAD, Asim, et al. Categorizing white blood cells by utilizing deep features of proposed 4B-AdditionNet-based CNN network with ant colony optimization. Complex & Intelligent Systems, 2022, 8.4: 3143-3159. 
-papers CNN arhitecture, with modifications in the feature extraction process. The modification includes replacing the ResNet50 to ResNet50V2. ResNet50V2 is a modified version of ResNet50. ResNet50V2 was used in different medical application with success: 
-%FERREIRA, Carlos A., et al. Classification of breast cancer histology images through transfer learning using a pre-trained inception resnet v2. In: International conference image analysis and recognition. Springer, Cham, 2018. p. 763-770. 
-for histological analysis of breast tissue,
-%DOMINIC, Nicholas, et al. Transfer learning using inception-ResNet-v2 model to the augmented neuroimages data for autism spectrum disorder classification. Commun. Math. Biol. Neurosci., 2021, 2021: Article ID 39. 
-for detection of autism spectrum disorders on Resting-state Functional Magnetic Resonance Images 
-%RAHIMZADEH, Mohammad; ATTAR, Abolfazl. A modified deep convolutional neural network for detecting COVID-19 and pneumonia from chest X-ray images based on the concatenation of Xception and ResNet50V2. Informatics in medicine unlocked, 2020, 19: 100360. 
-for detecting COVID-19 and pneumonia from chest X-ray images.
- 
-
-
-
-
-
-
+The proposed CNN architecture in this research is very similar to the \cite{b5} papers CNN arhitecture, with modifications in the feature extraction process. 
+The modification includes replacing the ResNet50 to ResNet50V2. ResNet50V2 is a modified version of ResNet50. ResNet50V2 was used in different medical application with success: 
+\cite{b22} for histological analysis of breast tissue, \cite{b23} for detection of autism spectrum disorders on Resting-state Functional Magnetic Resonance Images 
+\cite{b6} for detecting COVID-19 and pneumonia from chest X-ray images.
