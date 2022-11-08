@@ -1,17 +1,16 @@
 \section{Materials and methods}\label{methods}
 
 This part presents the proposed tuning and modification on the 4B-AdditionNet
-%https://link.springer.com/article/10.1007/s40747-021-00564-x#Sec3
+\ref{b5}
 CNN architecture alongside the description of the main steps of the whole process to classify WBCs. The classification process includes the preprocessing of the blood smear images using CLAHE, the feature extraction using the combination of three networks, namely EfficientNetB0, 4B-AdditionNet and ResNet50V2, the feature selection using ant colony optimization and the classification using multiple classifiers. The steps of the whole process are discussed in the upcoming sections.
 
 \subsection{Image preprocessing}
 
 To enhance the images CLAHE
-%https://doi.org/10.21236/ADA014928
+\cite{CLAHE}
 is used on the dataset in order to improve the contrast of the smear images and make the cells more prominent. Since CLAHE works with one channel images, the images are splitted into three channels, one for each color channel, and then CLAHE was applied for the separate R, G, B channels. The enhanced images then were merged back together into one final image, which has a much higher contrast compared to the original one.
 
 \subsection{Feature extraction}
-%hozzaadott szam - telefonos képek?
 In this research, features are extracted from the three different CNNs. These features are extracted from the Blood Cell Images dataset. There are 9957 images from the Blood Cell Images dataset. The first network, 4B-AdditionNet extracts 4096 features from its FC-2 layer, while EfficientNetB0 extracts 1000 features from dense|MatMul layer and ResNet50V2 obtains another 1000 features from it's FC1000 layer.
 
 
@@ -51,7 +50,7 @@ In the classification process only a single feature vector can be used for class
 \subsection{Classification}
 
 The last step is classification. This is the process of predicting a class label for a given image. Different classifiers such as SVM,
-%https://link.springer.com/article/10.1007/BF00994018
+\cite{SVM}
 LDA,
-%https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x
+\cite{LDA}  
 and KNN has been used to classify WBC into four categories. The classifiers use fivefold cross-validaiton. The SVMs, namely Linear, Cubic and Quadratic SVM classifiers utilize a Box Constraint of 1 and a Coding Design of OneVsOne. The predictions are measured with multiple performance estimation methods. CSVM is noted to have the highest accuracy while LDA is the fastest one with acceptable accuracy.
