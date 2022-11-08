@@ -40,11 +40,19 @@ Budapest, Hungary}
 \maketitle
 
 \begin{abstract}
-The most efficient healthcare method is prevention. Blood samples are a great but costly way to \color{red}{eliminate} \color{green}{discover} serious health issues early.\color{red} {One of the blood analyzes includes analysis of the white blood cells} (WBCs later). Image prediction has developed significantly with Deep Learning. There are studies processing WBCs pretty efficiently. They include some machine learning models which could further optimized and we would like to improve them with the newest version and combinations of the models. We also would like to include lower quality images and predict on those as efficiently as on the base set. This could lead to more frequent and cheaper analysis.
+The most logical healthcare method is prevention. Analyzing blood samples is an efficient way to discover serious health issues at early stage. 
+Based on the count and the distribution of different types of white blood cells, (WBS) early diagnosis of severe diseases, like leukemia and others, can be established. 
+But process of manual blood sample analysis is very time consuming and costly. To solve this problem researchers have started to build automatic WBC counting and classification 
+systems by using machine learning and deep learning technics. Image classification has developed significantly after appearing modern convolutional neural network (CNN) architectures. 
+Researchers have achieved better and better results, but there is still room to improve the accuracy and especially the efficiency of the existing models. 
+In this research the proposed system, includes the following methodologies: contrast limited adaptive histogram equalization (CLAHE) for preprocessing, 
+combination of three networks, namely EfficientNetB0, 4B-AdditionNet and ResNet50V2 for feature extraction, ant colony optimization (ACO) for feature selection and multiple classifiers 
+for classification of the WBS images. The achieved results show nearly the same accuracy, as other state of the art systems, but reduced the run time with one order of magnitude.
+
 \end{abstract}
 
 \begin{IEEEkeywords}
-White blood cells · CNN · Classification · Preprocessing · Fusion · Selection
+White blood cells · CNN · Classification · Preprocessing · Feature extraction · ResNet50V2
 \end{IEEEkeywords}
 
 \input{introduction.tex}
@@ -112,7 +120,7 @@ This test contained much less features, which resulted in even worse accuracy, h
 \section{Conclusion}
 
 We achieved 10 fold runtime decrease with ResNet50V2 using 2100 feature sets while keeping accuracy close to the original.
-From the tests No. 2 and No. 3 we conclude that replacing ResNet50 with ResNet50V2 is a good way to decrease runtime while keeping good performance, but from the results we observed that the new method is sensitive to low feature sizes.
+From the tests No. 2 and No. 3 we conclude that replacing ResNet50 with ResNet50V2 is a good way to decrease runtime while keeping good accuracy, but from the results we observed that the new method is sensitive to low feature sizes.
 However for feature reduction we observed a negative result for runtime improvement, meaning that the original feature sizes are also performance optimal in the current pipeline.
 
 \section{Future work}
